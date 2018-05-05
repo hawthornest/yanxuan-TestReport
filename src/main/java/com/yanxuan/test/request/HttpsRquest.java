@@ -44,7 +44,7 @@ public class HttpsRquest {
 
 
 
-    public String httpsPost(String taskId)
+    public String httpsCallBackPost(String taskId)
     {
         PropertyConfigurator.configure("config/log4j.properties");
         String result = "";
@@ -71,12 +71,48 @@ public class HttpsRquest {
             System.out.println(result);
             return result;
         } catch (Exception e) {
-            StringWriter sw = new StringWriter();
-            PrintWriter pw = new PrintWriter(sw);
-            e.printStackTrace(pw);
-            pw.flush();
-            sw.flush();
-            logger.error(sw.toString());
+            OperaException(e);
+            return null;
+        }
+    }
+
+    public void OperaException(Exception e)
+    {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        e.printStackTrace(pw);
+        pw.flush();
+        sw.flush();
+        logger.error(sw.toString());
+    }
+
+    public String httpsTaskRunPost(String testId,String environmentId,String callBackUrl)
+    {
+        String result = "";
+        try {
+            HttpClient httpClient = new SSLClient();
+            Long timeStamp = System.currentTimeMillis();
+            String requestContent = "{\"id\": \""+testId+"\", \"cid\": \""+environmentId+"\",\"webhook\":\""+callBackUrl+"\",\"replace\":false,\"timestamp\":"+timeStamp+"}";
+            String sign = paramMd5(requestContent+"|"+key);
+            HttpPost httpPost = new HttpPost("https://gotest.hz.netease.com/open/api/task/suite/run");
+            httpPost.setHeader("Content-Type", "application/json");
+            httpPost.setHeader("token",token);
+            httpPost.setHeader("sign",sign);
+            StringEntity entity = new StringEntity(requestContent);
+            logger.info("请求参数为:"+requestContent+",签名为:"+sign);
+            httpPost.setEntity(entity);
+            HttpResponse response = httpClient.execute(httpPost);
+            logger.info("返回包为:"+response);
+            if(response != null){
+                HttpEntity resEntity = response.getEntity();
+                if(resEntity != null){
+                    result = EntityUtils.toString(resEntity,"utf-8");
+                }
+            }
+            System.out.println(result);
+            return result;
+        }catch (Exception e) {
+            OperaException(e);
             return null;
         }
     }
@@ -84,8 +120,9 @@ public class HttpsRquest {
     public static void main(String[] args) {
         String taskId = "d147d0eb-4ac4-11e8-a4d4-6d0a0c2e1ab9";
         HttpsRquest httpsRquest = new HttpsRquest();
-        String responseResult = httpsRquest.httpsPost(taskId);
-        HandleResponse handleResponse = new HandleResponse();
-        handleResponse.encapsuReportDetail(responseResult);
+//        String responseResult = httpsRquest.httpsCallBackPost(taskId);
+//        HandleResponse handleResponse = new HandleResponse();
+//        handleResponse.encapsuReportDetail(responseResult);
+        httpsRquest.httpsTaskRunPost("704","1i1284","http://smartipc.you.163.com/smart-ipc");
     }
 }

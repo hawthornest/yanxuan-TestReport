@@ -19,7 +19,7 @@ import org.apache.log4j.PropertyConfigurator;
 public class HandleResponse {
     private String connent = "<div style='width: 1170px;margin-left: 20%'> \n" +
             "<h1>接口测试的结果</h1>";
-    Logger logger = Logger.getLogger(HttpsRquest.class);
+    Logger logger = Logger.getLogger(HandleResponse.class);
     private int passCount = 0;
     private int failCount = 0;
     private String header = "<p> </p> \n" +
@@ -64,7 +64,7 @@ public class HandleResponse {
                 "            <span >Pass: <strong >%s</strong> \n" +
                 "            Fail: <strong >%s</strong> \n" +
                 "                    </span></p>                   \n" +
-                "                <p class=\"margin\" ><strong>测试详情如下</strong></p>  </div> ",timeStamp2Date(starttime),timeStamp2Date(endtime),(endtime-starttime),passge,fail);
+                "                <p class=\"margin\" ><strong>测试详情如下：</strong></p>  </div> ",timeStamp2Date(starttime),timeStamp2Date(endtime),(endtime-starttime),passge,fail);
         return summary;
     }
 
