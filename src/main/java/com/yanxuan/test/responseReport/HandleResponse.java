@@ -42,7 +42,7 @@ public class HandleResponse {
                 "        <meta charset=\"UTF-8\"> \n" +
                 "        <title>%s</title> \n" +
                 "        <style type=\"text/css\"> \n" +
-                "            td{ width:40px; height:50px;}  p.margin {margin-left:200px;}\n" +
+                "            td{ width:40px; height:50px;text-align: center;}  p.margin {margin-left:200px;}\n" +
                 "        </style> \n" +
                 "    </head> \n" +
                 "    <body> ",titles);
