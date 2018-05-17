@@ -1,5 +1,6 @@
 package com.yanxuan.test;
 
+import com.yanxuan.test.getproperties.GetProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

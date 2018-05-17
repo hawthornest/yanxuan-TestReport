@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.yanxuan.test.request.HttpsRquest;
 import com.yanxuan.test.responseReport.HandleResponse;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +19,7 @@ public class GoTestCallBack {
     @GetMapping("/yanxuan/callback")
     public String callback(@RequestHeader(value="taskId",defaultValue = "") String taskId)
     {
-        PropertyConfigurator.configure("config/log4j.properties");
+
         CallBackResponse callBackResponse = new CallBackResponse();
         if (taskId==null || taskId.equals(""))
         {

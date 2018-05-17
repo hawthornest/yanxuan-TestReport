@@ -8,8 +8,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import org.apache.log4j.Logger;
 import com.alibaba.fastjson.*;
-import com.yanxuan.test.request.HttpsRquest;
-import org.apache.log4j.PropertyConfigurator;
+
 
 /**
  * @Author yyhu3
@@ -119,7 +118,7 @@ public class HandleResponse {
 
     public void encapsuReportDetail(String obtainedResults)
     {
-        PropertyConfigurator.configure("config/log4j.properties");
+
         logger.info("返回包:"+obtainedResults);
         File responseResultFile=new File("responseResult.html");
         try {

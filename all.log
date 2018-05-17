@@ -1,0 +1,91 @@
+2018-05-17 13:36:41,297  INFO SpringBootTestContextBootstrapper:319 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.yanxuan.test.TestReportApplicationTests], using SpringBootContextLoader
+2018-05-17 13:36:41,304  INFO AbstractContextLoader:264 - Could not detect default resource locations for test class [com.yanxuan.test.TestReportApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-05-17 13:36:41,305  INFO AnnotationConfigContextLoaderUtils:81 - Could not detect default configuration classes for test class [com.yanxuan.test.TestReportApplicationTests]: TestReportApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-05-17 13:36:41,428  INFO SpringBootTestContextBootstrapper:206 - Found @SpringBootConfiguration com.yanxuan.test.TestReportApplication for test class com.yanxuan.test.TestReportApplicationTests
+2018-05-17 13:36:41,438  INFO SpringBootTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-05-17 13:36:41,459  INFO SpringBootTestContextBootstrapper:209 - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2018-05-17 13:36:41,476  INFO SpringBootTestContextBootstrapper:209 - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2018-05-17 13:36:41,477  INFO SpringBootTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@18023558, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@38fc30b8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@34e29d42, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9c2732e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3d17d603, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67e37e4a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@878618f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@174cf7a1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3e1576fa, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@733636ed]
+2018-05-17 13:36:41,915  INFO TestReportApplicationTests:48 - Starting TestReportApplicationTests on HIH-D-8686 with PID 34176 (started by hzhuyuanyuan in E:\StudySource\TestReport)
+2018-05-17 13:36:41,915  INFO TestReportApplicationTests:597 - The following profiles are active: dev
+2018-05-17 13:36:41,968  INFO GenericWebApplicationContext:583 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@9476189: startup date [Thu May 17 13:36:41 CST 2018]; root of context hierarchy
+2018-05-17 13:36:42,424  INFO Version:30 - HV000001: Hibernate Validator 5.3.6.Final
+2018-05-17 13:36:43,596  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@9476189: startup date [Thu May 17 13:36:41 CST 2018]; root of context hierarchy
+2018-05-17 13:36:43,665  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/login],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GetCookie.openidLogin(java.lang.String,java.lang.String)
+2018-05-17 13:36:43,666  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/callback],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GoTestCallBack.callback(java.lang.String)
+2018-05-17 13:36:43,667  INFO RequestMappingHandlerMapping:543 - Mapped "{[/sendemail],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.MailController.sendEmail()
+2018-05-17 13:36:43,669  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/taskrun],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.TaskRun.executeTtestCase(java.lang.String,java.lang.String,java.lang.String)
+2018-05-17 13:36:43,671  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-17 13:36:43,672  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-17 13:36:43,702  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:36:43,702  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:36:43,745  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:36:43,927  INFO TestReportApplicationTests:57 - Started TestReportApplicationTests in 2.353 seconds (JVM running for 3.021)
+2018-05-17 13:36:43,961 ERROR TestReportApplicationTests:24 - test
+2018-05-17 13:36:43,964  INFO GenericWebApplicationContext:984 - Closing org.springframework.web.context.support.GenericWebApplicationContext@9476189: startup date [Thu May 17 13:36:41 CST 2018]; root of context hierarchy
+2018-05-17 13:44:35,106  INFO TestReportApplication:48 - Starting TestReportApplication on HIH-D-8686 with PID 35716 (E:\StudySource\TestReport\target\classes started by hzhuyuanyuan in E:\StudySource\TestReport)
+2018-05-17 13:44:35,107  INFO TestReportApplication:597 - The following profiles are active: dev
+2018-05-17 13:44:35,155  INFO AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@71051c99: startup date [Thu May 17 13:44:35 CST 2018]; root of context hierarchy
+2018-05-17 13:44:35,523  INFO Version:30 - HV000001: Hibernate Validator 5.3.6.Final
+2018-05-17 13:44:36,476  INFO TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8083 (http)
+2018-05-17 13:44:36,604  INFO ContextLoader:276 - Root WebApplicationContext: initialization completed in 1451 ms
+2018-05-17 13:44:36,762  INFO ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-17 13:44:36,766  INFO FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-17 13:44:36,766  INFO FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-17 13:44:36,766  INFO FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-17 13:44:36,767  INFO FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-17 13:44:37,087  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@71051c99: startup date [Thu May 17 13:44:35 CST 2018]; root of context hierarchy
+2018-05-17 13:44:37,146  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/login],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GetCookie.openidLogin(java.lang.String,java.lang.String)
+2018-05-17 13:44:37,148  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/callback],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GoTestCallBack.callback(java.lang.String)
+2018-05-17 13:44:37,149  INFO RequestMappingHandlerMapping:543 - Mapped "{[/sendemail],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.MailController.sendEmail()
+2018-05-17 13:44:37,149  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/taskrun],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.TaskRun.executeTtestCase(java.lang.String,java.lang.String,java.lang.String)
+2018-05-17 13:44:37,153  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-17 13:44:37,154  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-17 13:44:37,178  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:44:37,178  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:44:37,217  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 13:44:37,447  INFO AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-05-17 13:44:37,548  INFO TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8083 (http)
+2018-05-17 13:44:37,554  INFO TestReportApplication:57 - Started TestReportApplication in 2.725 seconds (JVM running for 3.139)
+2018-05-17 13:44:50,320  INFO DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-17 13:44:50,338  INFO DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2018-05-17 13:44:50,382  INFO HttpsRquest:39 - 收件人邮箱为:hyyxwf1214@126.com
+2018-05-17 20:16:41,437  INFO TestReportApplication:48 - Starting TestReportApplication on HIH-D-8686 with PID 39872 (E:\StudySource\TestReport\target\classes started by hzhuyuanyuan in E:\StudySource\TestReport)
+2018-05-17 20:16:41,459  INFO TestReportApplication:597 - The following profiles are active: dev
+2018-05-17 20:16:41,526  INFO AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77dacebf: startup date [Thu May 17 20:16:41 CST 2018]; root of context hierarchy
+2018-05-17 20:16:41,845  INFO Version:30 - HV000001: Hibernate Validator 5.3.6.Final
+2018-05-17 20:16:42,876  INFO TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8083 (http)
+2018-05-17 20:16:43,018  INFO ContextLoader:276 - Root WebApplicationContext: initialization completed in 1494 ms
+2018-05-17 20:16:43,176  INFO ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-17 20:16:43,179  INFO FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-17 20:16:43,180  INFO FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-17 20:16:43,180  INFO FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-17 20:16:43,180  INFO FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-17 20:16:43,500  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77dacebf: startup date [Thu May 17 20:16:41 CST 2018]; root of context hierarchy
+2018-05-17 20:16:43,560  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/login],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GetCookie.openidLogin(java.lang.String,java.lang.String)
+2018-05-17 20:16:43,562  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/callback],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.GoTestCallBack.callback(java.lang.String)
+2018-05-17 20:16:43,562  INFO RequestMappingHandlerMapping:543 - Mapped "{[/sendemail],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.MailController.sendEmail()
+2018-05-17 20:16:43,563  INFO RequestMappingHandlerMapping:543 - Mapped "{[/yanxuan/taskrun],methods=[GET]}" onto public java.lang.String com.yanxuan.test.controller.TaskRun.executeTtestCase(java.lang.String,java.lang.String,java.lang.String)
+2018-05-17 20:16:43,566  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-17 20:16:43,567  INFO RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-17 20:16:43,594  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 20:16:43,594  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 20:16:43,640  INFO SimpleUrlHandlerMapping:362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-17 20:16:43,851  INFO AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-05-17 20:16:43,970  INFO TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8083 (http)
+2018-05-17 20:16:43,974  INFO TestReportApplication:57 - Started TestReportApplication in 2.968 seconds (JVM running for 3.924)
+2018-05-17 20:17:33,504  INFO DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-17 20:17:33,525  INFO DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2018-05-17 20:17:33,934  INFO LogIn:41 - 发起登录的第一次请求:
+2018-05-17 20:17:34,252  INFO LogIn:43 - 登录的第一次请求url为:https://login.netease.com/connect/authorize?response_type=code
+2018-05-17 20:17:34,253  INFO LogIn:50 - 首次请求的token返回是:dRpZCa0upzhXDJWmXLfP4mBshI5IXmgL
+2018-05-17 20:17:34,255  INFO LogIn:61 - 发起登录的第二次请求:
+2018-05-17 20:17:34,255  INFO LogIn:62 - 登录的第二次请求的url为:https://login.netease.com/connect/authorize?response_type=code&scope=openid
+2018-05-17 20:17:34,351  INFO LogIn:66 - 获取到的重定向的url为:http://yx.mail.netease.com/openid/cb?state=&code=2df4fc5647fb4c4fae088ff0916e1cce
+2018-05-17 20:17:34,351  INFO LogIn:68 - 发起登录的第三次请求:http://yx.mail.netease.com/openid/cb?state=&code=2df4fc5647fb4c4fae088ff0916e1cce
+2018-05-17 20:17:34,411  INFO LogIn:101 - 获取到的YX_CSRF_TOKEN的cookie值为:9e5f423189d115755faf0593e8464c67
+2018-05-17 20:17:34,411  INFO LogIn:101 - 获取到的YX_OPENID_SESS的cookie值为:i/JRzNzTQVnCsj2BPkKM13/AJNK/kTW19DFpaBU50TbCVEkNrwl1S3D1Swpxo/omXL/UM88N9nuTm0tzyn011NxV8TfYqnFmbP/7ISbF/m9Lpr3Jk132N0G82G35mrpwBbJRgClB531S74ysOExuZeXBwto/lKHhQ5jW0u3K5dk=
+2018-05-17 20:17:34,412  INFO LogIn:101 - 获取到的csrftoken的cookie值为:dRpZCa0upzhXDJWmXLfP4mBshI5IXmgL
+2018-05-17 20:17:34,412  INFO LogIn:101 - 获取到的yx_name的cookie值为:%E8%83%A1%E5%9B%AD%E5%9B%AD
+2018-05-17 20:17:34,412  INFO LogIn:101 - 获取到的yx_username的cookie值为:hzhuyuanyuan%40corp.netease.com
+2018-05-17 20:17:34,463  INFO LogIn:88 - cookie返回包为:{"csrftoken":"dRpZCa0upzhXDJWmXLfP4mBshI5IXmgL","yX_CSRF_TOKEN":"9e5f423189d115755faf0593e8464c67","yX_OPENID_SESS":"i/JRzNzTQVnCsj2BPkKM13/AJNK/kTW19DFpaBU50TbCVEkNrwl1S3D1Swpxo/omXL/UM88N9nuTm0tzyn011NxV8TfYqnFmbP/7ISbF/m9Lpr3Jk132N0G82G35mrpwBbJRgClB531S74ysOExuZeXBwto/lKHhQ5jW0u3K5dk=","yx_name":"%E8%83%A1%E5%9B%AD%E5%9B%AD","yx_username":"hzhuyuanyuan%40corp.netease.com"}

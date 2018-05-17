@@ -4,37 +4,33 @@ import com.alibaba.fastjson.JSON;
 import com.yanxuan.test.request.HttpsRquest;
 import com.yanxuan.test.request.SSLClient;
 import com.yanxuan.test.response.LogInResponse;
-import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.AbstractHttpClient;
-import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.http.cookie.Cookie;
-import com.yanxuan.test.request.HttpsRquest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.List;
 
 /**
  * @Author yyhu3
  * @Date 2018-05-08 11:31
  */
+@Service
 public class LogIn {
+    @Autowired
+    HttpsRquest httpsRquest;
     private String client_id = "28b3a9985fe411e7b1295cf3fc96a72c";
-    Logger logger = Logger.getLogger(HttpsRquest.class);
+    Logger logger = Logger.getLogger(LogIn.class);
 
     public String logInRequset()
     {
-        PropertyConfigurator.configure("config/log4j.properties");
         LogInResponse logInResponse =null;
         try {
             String csrftoken="";
@@ -44,6 +40,7 @@ public class LogIn {
             httpsGet.addHeader("Connection", "Keep-Alive");
             logger.info("发起登录的第一次请求:");
             HttpResponse getResponse = httpsClient.execute(httpsGet);
+            logger.info("登录的第一次请求url为:https://login.netease.com/connect/authorize?response_type=code");
             List<Cookie> cookies = ((AbstractHttpClient) httpsClient).getCookieStore().getCookies();
             for (int i = 0; i < cookies.size(); i++) {
                 if (cookies.get(i).toString().contains("csrftoken"))
@@ -62,12 +59,13 @@ public class LogIn {
             StringEntity entity = new StringEntity(requestContent);
             httpPost.setEntity(entity);
             logger.info("发起登录的第二次请求:");
+            logger.info("登录的第二次请求的url为:https://login.netease.com/connect/authorize?response_type=code&scope=openid");
             HttpResponse postResponse = httpsClient.execute(httpPost);
             Header locationHeader = postResponse.getFirstHeader("Location");
             String location = locationHeader.getValue();
             logger.info("获取到的重定向的url为:"+location);
             httpPost.releaseConnection();
-            logger.info("发起登录的第三次请求:");
+            logger.info("发起登录的第三次请求:"+location);
             HttpGet httpGet = new HttpGet(location);
             HttpResponse getThirdResponse = httpsClient.execute(httpGet);
             List<Cookie> getThirdCookies = ((AbstractHttpClient) httpsClient).getCookieStore().getCookies();
@@ -83,7 +81,7 @@ public class LogIn {
             logInResponse.setYX_OPENID_SESS(YX_OPENID_SESS);
             logInResponse.setYx_username(yx_username);
         } catch (Exception e) {
-            HttpsRquest httpsRquest = new HttpsRquest();
+//            HttpsRquest httpsRquest = new HttpsRquest();
             httpsRquest.OperaException(e);
         }
         finally {

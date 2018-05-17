@@ -15,11 +15,13 @@ import java.security.MessageDigest;
 
 
 import com.yanxuan.test.responseReport.HandleResponse;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author yyhu3
  * @Date 2018-04-28 15:39
  */
+@Service
 public class HttpsRquest {
     Logger logger = Logger.getLogger(HttpsRquest.class);
     private String token = "7a906a1b-835c-4b21-ac61-97231a2bb4b0";
@@ -46,7 +48,7 @@ public class HttpsRquest {
 
     public String httpsCallBackPost(String taskId)
     {
-        PropertyConfigurator.configure("config/log4j.properties");
+
         String result = "";
         try {
             HttpClient httpClient = new SSLClient();

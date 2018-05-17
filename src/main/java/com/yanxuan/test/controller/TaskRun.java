@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.yanxuan.test.request.HttpsRquest;
 import com.yanxuan.test.response.CallBackResponse;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +19,7 @@ public class TaskRun {
     @GetMapping("/yanxuan/taskrun")
     public String executeTtestCase(String testId,String environmentId,String callBackUrl)
     {
-        PropertyConfigurator.configure("config/log4j.properties");
+
         CallBackResponse implementRespons = new CallBackResponse();
         HttpsRquest httpsRquest = new HttpsRquest();
         String runResponse = httpsRquest.httpsTaskRunPost(testId,environmentId,callBackUrl);
