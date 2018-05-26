@@ -7,6 +7,15 @@ package com.yanxuan.test.response;
 public class CallBackResponse {
     private int code;
     private String msg;
+    private String emailSender;
+
+    public String getEmailSender() {
+        return emailSender;
+    }
+
+    public void setEmailSender(String emailSender) {
+        this.emailSender = emailSender;
+    }
 
     public int getCode() {
         return code;

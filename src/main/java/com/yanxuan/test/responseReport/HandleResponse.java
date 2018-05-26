@@ -29,7 +29,7 @@ public class HandleResponse {
             "            <td><strong>测试类型</strong></td> \n" +
             "            <td><strong>测试用例id</strong></td> \n" +
             "            <td><strong>测试用例名</strong></td> \n" +
-            "            <td><strong>执行时间</strong></td> \n" +
+            "            <td><strong>创建时间</strong></td> \n" +
             "            <td><strong>执行结果</strong></td> \n" +
             "        </tr>";
 
@@ -123,7 +123,7 @@ public class HandleResponse {
         File responseResultFile=new File("responseResult.html");
         try {
             String checkResult = "fail";
-            FileWriter responseResultFileWriter =  new FileWriter(responseResultFile, true);
+            FileWriter responseResultFileWriter =  new FileWriter(responseResultFile, false);
             PrintWriter responseResultPrintWriter = new PrintWriter(responseResultFileWriter);
             responseResultPrintWriter.println(ReportFileHeader("接口测试结果"));
 

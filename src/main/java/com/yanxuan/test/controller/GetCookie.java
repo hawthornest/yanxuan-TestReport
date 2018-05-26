@@ -1,6 +1,7 @@
 package com.yanxuan.test.controller;
 
 import com.yanxuan.test.publicmethod.LogIn;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GetCookie {
     @Autowired
     LogIn logIn;
+    @ApiOperation(value="获取登录cookie", notes="获取corp邮箱登录的有效cookie")
     @GetMapping("/yanxuan/login")
     public String openidLogin(String userName,String passWord)
     {

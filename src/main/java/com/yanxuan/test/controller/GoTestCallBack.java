@@ -1,12 +1,14 @@
 package com.yanxuan.test.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.yanxuan.test.getproperties.GetProperties;
+import com.yanxuan.test.publicmethod.SendEmail;
 import com.yanxuan.test.request.HttpsRquest;
 import com.yanxuan.test.responseReport.HandleResponse;
+import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import com.yanxuan.test.response.CallBackResponse;
 
 /**
@@ -15,8 +17,14 @@ import com.yanxuan.test.response.CallBackResponse;
  */
 @RestController
 public class GoTestCallBack {
+    @Autowired
+    SendEmail sendEmailTest;
+    @Autowired
+    GetProperties getProperties;
+
     Logger logger = Logger.getLogger(GoTestCallBack.class);
-    @GetMapping("/yanxuan/callback")
+    @ApiOperation(value="提供回调", notes="提供给gotest使用的回调接口")
+    @RequestMapping(value="/yanxuan/callback",method= RequestMethod.GET)
     public String callback(@RequestHeader(value="taskId",defaultValue = "") String taskId)
     {
 
@@ -35,7 +43,10 @@ public class GoTestCallBack {
             callBackResponse.setCode(200);
             callBackResponse.setMsg("success");
         }
+        callBackResponse.setEmailSender(getProperties.emailSender);
         logger.info("返回包给gotest的返回包为:"+JSON.toJSONString(callBackResponse));
+        sendEmailTest.sendMail();
+
         return JSON.toJSONString(callBackResponse);
     }
 }
