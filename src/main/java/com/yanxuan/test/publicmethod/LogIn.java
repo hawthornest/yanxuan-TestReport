@@ -29,7 +29,7 @@ public class LogIn {
     private String client_id = "28b3a9985fe411e7b1295cf3fc96a72c";
     Logger logger = Logger.getLogger(LogIn.class);
 
-    public String logInRequset()
+    public String logInRequset(String userName,String passWord)
     {
         LogInResponse logInResponse =null;
         try {
@@ -60,7 +60,7 @@ public class LogIn {
             httpPost.setHeader("Accept-Language","zh-CN,zh;q=0.8");
             httpPost.setHeader("Referer","https://login.netease.com/connect/authorize?response_type=code&scope=openid%20fullname%20email&client_id=28b3a9985fe411e7b1295cf3fc96a72c&redirect_uri=http%3A%2F%2Fyx.mail.netease.com%2Fopenid%2Fcb");
             httpPost.setHeader("Cookie","csrftoken="+csrftoken);
-            String requestContent="csrfmiddlewaretoken="+csrftoken+"&authm=corp&client_id="+client_id+"&redirect_uri=http%3A%2F%2Fyx.mail.netease.com%2Fopenid%2Fcb&response_type=code&scope=openid+fullname+email&state=&corpid=hzhuyuanyuan&corppw=yyhu3%23WFXU&allow=submit";
+            String requestContent="csrfmiddlewaretoken="+csrftoken+"&authm=corp&client_id="+client_id+"&redirect_uri=http%3A%2F%2Fyx.mail.netease.com%2Fopenid%2Fcb&response_type=code&scope=openid+fullname+email&state=&corpid="+userName+"&corppw="+passWord+"&allow=submit";
             StringEntity entity = new StringEntity(requestContent);
             httpPost.setEntity(entity);
             logger.info("发起登录的第二次请求:");
@@ -118,6 +118,6 @@ public class LogIn {
     public static void main(String[] args)
     {
         LogIn LogIn = new LogIn();
-        LogIn.logInRequset();
+        LogIn.logInRequset("test","test");
     }
 }

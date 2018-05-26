@@ -21,7 +21,7 @@ public class GetCookie {
     public String openidLogin(String userName,String passWord)
     {
 //        LogIn logIn = new LogIn();
-        String logCookie = logIn.logInRequset();
+        String logCookie = logIn.logInRequset(userName,passWord);
         return logCookie;
     }
 }
